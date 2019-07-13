@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="output.css" rel="stylesheet">
+    </head>
+    <body class="bg-gray-200">
+        <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6 relative">
+            <div class="flex items-center flex-shrink-0 text-white mr-6 text-center absolute top-0 right-0">
+              <span class="font-semibold text-xl tracking-tight select-none">Hispan Shop</span>
+            </div>
+            <div class="flex items-center">
+                <input type="text" placeholder="Buscar" class="outline-none focus:shadow-outline focus:bg-blue-100 absolute h-8 inset-y-0 top-0 ml-6 rounded-full py-2 px-4">
+            </div>
+            <!--Este es el botón tipo hamburguesa-->
+            <div class="block ">
+              <button id="mostrarMenu" onclick="mostrarMenu()" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white absolute left-0 top-0">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              </button>
+              <button id="ocultarMenu" onclick="ocultarMenu()" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white absolute left-0 top-0" style = 'display: none'>
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              </button>
+            </div>
+            <!--Aquí están las opciones que podemos aumentar o quitar para la acción del botón-->
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div id="Hamburguesa" class="text-sm lg:flex-grow pt-4" hidden>
+                <a href="#Categorías" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black pt-2 rounded-full py-2 px-4 border-solid border-4">
+                  Categorías
+                </a>
+                <a href="#Ofertas del día" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black pt-2 ml-2 rounded-full py-2 px-4 border-solid border-4">
+                  Ofertas del día
+                </a>
+                <a href="#Ayuda" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black pt-2 ml-2 rounded-full py-2 px-4 border-solid border-4">
+                  Ayuda
+                </a>
+              </div>
+            </div>
+        </nav>
+        <!--Esta es una tarjeta, contiene un título, descripción. Dependiendo el modelo escogido tendrá otros 
+        elementos-->
+        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')">
+            </div>
+            <!--Este es el contenido de la tarjeta-->
+            <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                    <div class="text-gray-900 font-bold text-xl mb-2">Sillas de oficina</div>
+                    <p class="text-gray-700 text-base">Cómodas sillas de oficina, hechas con el material que más le guste</p>
+                </div>
+                <!--En la etiqueta div que va a contener la imagen se debe poner flex items-center para poder modificar el 
+                    tamaño de la imagen que vamos a poner-->
+                    <!--Cuando usemos las propiedades w o h para modificar el tamaño, usar siempre los números que nos proporciona
+                    el framework o habrá errores-->
+                <div class="flex items-center"><img class="w-64 h-64" src="img/SillaOficina.png"></div>
+                <!--Relative (padre) sirve para el miembro absolute (hijo) se quede dentro del contenedor padre-->
+                <div class="flex items-center relative">
+                    <img class="w-10 h-10 rounded-full mr-4" src="/img/tiendaSilla.jpg">
+                    <div class="text-sm">
+                        <p class="text-gray-900 leading-none">Comisariato de la silla</p>
+                        <p class="text-gray-600">Marzo 18</p>
+                    </div>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full absolute inset-y-0 right-0">
+                            Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--Otra tarjeta con otro producto-->
+        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')">
+            </div>
+            <!--Este es el contenido de la tarjeta-->
+            <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                    <div class="text-gray-900 font-bold text-xl mb-2">Juego de comedor</div>
+                    <p class="text-gray-700 text-base">Hermoso juego de comedor de 6 sillas hecho en madera de pino</p>
+                </div>
+                <!--En la etiqueta div que va a contener la imagen se debe poner flex items-center para poder modificar el 
+                tamaño de la imagen que vamos a poner-->
+                <!--Cuando usemos las propiedades w o h para modificar el tamaño, usar siempre los números que nos proporciona
+                el framework o habrá errores-->
+                <div class="flex items-center"><img class="w-64 h-48" src="img/JuegoComedor.jpg"></div>
+                <div class="flex items-center relative">
+                    <img class="w-10 h-10 rounded-full mr-4" src="/img/perfilMujer.jpg">
+                    <div class="text-sm">
+                        <p class="text-gray-900 leading-none">Amanda Aguilar</p>
+                        <p class="text-gray-600">Junio 22</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full absolute inset-y-0 right-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Otra tarjeta con otro producto-->
+        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')">
+            </div>
+            <!--Este es el contenido de la tarjeta-->
+            <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                    <div class="text-gray-900 font-bold text-xl mb-2">Departamento a la venta</div>
+                    <p class="text-gray-700 text-base">Hermoso departamento con vista a la ciudad. Vuenta con servicios básicos e internet </p>
+                </div>
+                <div class="flex items-center"><img class="w-auto h-48" src="img/Departamento.jpeg"></div>
+                <div class="flex items-center relative">
+                    <img class="w-10 h-10 rounded-full mr-4" src="/img/perfilHombre.jpg">
+                    <div class="text-sm">
+                        <p class="text-gray-900 leading-none">Armando Naranjo</p>
+                        <p class="text-gray-600">Ayer</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full absolute inset-y-0 right-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function mostrarMenu()
+        {
+            document.getElementById("Hamburguesa").style.display = "block";
+            document.getElementById("mostrarMenu").style.display = "none";
+            document.getElementById("ocultarMenu").style.display = "block";
+        }
+        function ocultarMenu()
+        {
+            document.getElementById("Hamburguesa").style.display = "none";
+            document.getElementById("ocultarMenu").style.display = "none";
+            document.getElementById("mostrarMenu").style.display = "block";
+        }
+        </script>
+    </body>
+</html>
